@@ -36,7 +36,7 @@ A Pac-Man-style 2D maze game playable in the browser. Steer your character with 
 | Front End (Build) | Vite | 8.x |
 | Front End (Rendering) | HTML5 Canvas API (no external libraries) | - |
 | Back End | Hono (planned — online ranking API) | - |
-| Unit Tests | Vitest | - |
+| Unit Tests | Vitest | 4.x |
 | Lint & Formatting | ESLint + Prettier | - |
 | Package Manager | pnpm | 11.x |
 | CI/CD | GitHub Actions | - |
@@ -89,7 +89,8 @@ Run everything from the repository root.
 | `pnpm dev` | Start the dev server |
 | `pnpm build` | Type check + production build |
 | `pnpm preview` | Preview the production build |
-| `pnpm test` | Run unit tests (Vitest) |
+| `pnpm test` | Run unit tests once (Vitest) |
+| `pnpm test:watch` | Run unit tests in watch mode |
 | `pnpm lint` | Run linter |
 | `pnpm format` | Format code |
 
