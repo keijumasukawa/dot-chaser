@@ -1,4 +1,4 @@
-# dot-chaser
+# dot-chaser-app
 
 English | [日本語](./README.ja.md)
 
