@@ -30,17 +30,17 @@ A Pac-Man-style 2D maze game playable in the browser. Steer your character with 
 
 ## Tech Stack
 
-| Category | Technology | Version |
-| --- | --- | --- |
-| Language | TypeScript (shared by front end & back end) | 6.x |
-| Front End (Build) | Vite | 8.x |
-| Front End (Rendering) | HTML5 Canvas API (no external libraries) | - |
-| Back End | Hono (planned — online ranking API) | - |
-| Unit Tests | Vitest | 4.x |
-| Lint & Formatting | ESLint + Prettier | - |
-| Package Manager | pnpm | 11.x |
-| CI/CD | GitHub Actions | - |
-| Deployment | Vercel | - |
+| Category              | Technology                                  | Version    |
+| --------------------- | ------------------------------------------- | ---------- |
+| Language              | TypeScript (shared by front end & back end) | 6.x        |
+| Front End (Build)     | Vite                                        | 8.x        |
+| Front End (Rendering) | HTML5 Canvas API (no external libraries)    | -          |
+| Back End              | Hono (planned — online ranking API)         | -          |
+| Unit Tests            | Vitest                                      | 4.x        |
+| Lint & Formatting     | ESLint + Prettier                           | 10.x / 3.x |
+| Package Manager       | pnpm                                        | 11.x       |
+| CI/CD                 | GitHub Actions                              | -          |
+| Deployment            | Vercel                                      | -          |
 
 ## Architecture
 
@@ -84,15 +84,15 @@ No environment variables are required.
 
 Run everything from the repository root.
 
-| Command | Description |
-| --- | --- |
-| `pnpm dev` | Start the dev server |
-| `pnpm build` | Type check + production build |
-| `pnpm preview` | Preview the production build |
-| `pnpm test` | Run unit tests once (Vitest) |
-| `pnpm test:watch` | Run unit tests in watch mode |
-| `pnpm lint` | Run linter |
-| `pnpm format` | Format code |
+| Command           | Description                   |
+| ----------------- | ----------------------------- |
+| `pnpm dev`        | Start the dev server          |
+| `pnpm build`      | Type check + production build |
+| `pnpm preview`    | Preview the production build  |
+| `pnpm test`       | Run unit tests once (Vitest)  |
+| `pnpm test:watch` | Run unit tests in watch mode  |
+| `pnpm lint`       | Run linter                    |
+| `pnpm format`     | Format code                   |
 
 ## Dev Server URL
 
