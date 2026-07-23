@@ -33,7 +33,7 @@ A Pac-Man-style 2D maze game playable in the browser. Steer your character with 
 | Category | Technology | Version |
 | --- | --- | --- |
 | Language | TypeScript (shared by front end & back end) | 6.x |
-| Front End (Build) | Vite | - |
+| Front End (Build) | Vite | 8.x |
 | Front End (Rendering) | HTML5 Canvas API (no external libraries) | - |
 | Back End | Hono (planned — online ranking API) | - |
 | Unit Tests | Vitest | - |
