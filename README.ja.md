@@ -36,7 +36,7 @@
 | フロントエンド(ビルド) | Vite | 8.x |
 | フロントエンド(描画) | HTML5 Canvas API(外部ライブラリなし) | - |
 | バックエンド | Hono(予定・オンラインランキング API 用) | - |
-| 単体テスト | Vitest | - |
+| 単体テスト | Vitest | 4.x |
 | Lint・フォーマット | ESLint + Prettier | - |
 | パッケージ管理 | pnpm | 11.x |
 | CI/CD | GitHub Actions | - |
@@ -89,7 +89,8 @@ pnpm dev       # 開発サーバーの起動
 | `pnpm dev` | 開発サーバーの起動 |
 | `pnpm build` | 型チェック + 本番用ビルド |
 | `pnpm preview` | ビルド結果のプレビュー |
-| `pnpm test` | 単体テストの実行(Vitest) |
+| `pnpm test` | 単体テストの一回実行(Vitest) |
+| `pnpm test:watch` | 単体テストの継続実行(ファイル変更を監視) |
 | `pnpm lint` | Lint の実行 |
 | `pnpm format` | コードフォーマット |
 
