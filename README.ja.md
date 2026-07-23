@@ -12,7 +12,7 @@
 
 ### デモ
 
-(準備中 — デプロイ後に URL を記載)
+https://dot-chaser-app.vercel.app
 
 ### 主要機能
 

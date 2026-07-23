@@ -12,7 +12,7 @@ A Pac-Man-style 2D maze game playable in the browser. Steer your character with 
 
 ### Demo
 
-(Coming soon — URL will be added after deployment)
+https://dot-chaser-app.vercel.app
 
 ### Key Features
 
