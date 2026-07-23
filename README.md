@@ -63,6 +63,7 @@ Game logic (maze checks, movement, collision, scoring) is separated from Canvas 
 │   ├── maze.ts          # Maze data & tile checks
 │   ├── pacman.ts        # Player movement & drawing
 │   ├── ghost.ts         # Ghost AI, states & drawing
+│   ├── i18n/            # Internationalization (type-safe dictionaries & t())
 │   ├── types.ts         # Shared types (directions, etc.)
 │   └── style.css        # Page-wide styles
 ├── package.json

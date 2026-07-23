@@ -4,10 +4,37 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dot-chaser</title>
+    <title>DOT CHASER</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <h1 id="app-title">DOT CHASER</h1>
+    </header>
+    <div class="toggle" id="theme-toggle" role="group">
+      <button id="theme-dark" type="button">Dark</button>
+      <button id="theme-light" type="button">Light</button>
+    </div>
+    <main class="device">
+      <div class="hud">
+        <div>
+          <p class="label" id="label-score">Score</p>
+          <p class="value">0</p>
+        </div>
+        <div>
+          <p class="label" id="label-high">High</p>
+          <p class="value">0</p>
+        </div>
+        <div>
+          <p class="label" id="label-lives">Lives</p>
+          <div class="lives"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <canvas id="game"></canvas>
+      <div class="pad" aria-hidden="true">
+        <span>←</span><span>↑</span><span>↓</span><span>→</span>
+      </div>
+    </main>
+    <p class="help" id="help-text">Move: Arrow keys / WASD | Pause: P</p>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
