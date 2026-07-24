@@ -2,13 +2,13 @@
 
 English | [日本語](./README.ja.md)
 
-<!-- Keep this file in sync when README.ja.md is updated. -->
+<!-- When updating this file, keep README.ja.md in sync. -->
 
 ## Overview
 
-A Pac-Man-style 2D maze game playable in the browser. Steer your character with the arrow keys, dodge the ghosts, and clear the stage by collecting every dot in the maze.
+A retro-arcade-style 2D maze game that runs in the browser. Use the arrow keys to move your character, dodge the ghosts, and collect every dot in the maze to clear the stage.
 
-> 🚧 Under active development. This README is updated as the implementation progresses.
+> 🚧 Under active development. This README will be updated as development progresses.
 
 ### Demo
 
@@ -16,40 +16,38 @@ https://dot-chaser-app.vercel.app
 
 ### Key Features
 
-- Maze exploration and dot collection (collect them all to clear the stage)
-- 4 ghosts, each with a different chase algorithm
-- Power pellets (eat the ghosts back for a limited time)
-- Score & high-score persistence (localStorage)
-- Level progression (difficulty increases with each cleared stage)
-- Lives, game over, and restart
-- Pause
+- Maze exploration and dot collection — collect every dot to clear the stage
+- Four ghosts, each with a distinct chase algorithm, plus power pellets that temporarily turn the tables, letting you eat the ghosts
+- Level progression — difficulty ramps up with each stage you clear
+- A lives system (it's game over when you run out), plus restart and pause support
+- Score and high score are saved to `localStorage`
 
 ### Screenshots
 
-(Coming soon — will be added once implemented)
+To be added as development progresses.
 
 ## Tech Stack
 
-| Category              | Technology                                  | Version    |
-| --------------------- | ------------------------------------------- | ---------- |
-| Language              | TypeScript (shared by front end & back end) | 6.x        |
-| Front End (Build)     | Vite                                        | 8.x        |
-| Front End (Rendering) | HTML5 Canvas API (no external libraries)    | -          |
-| Back End              | Hono (planned — online ranking API)         | -          |
-| Unit Tests            | Vitest                                      | 4.x        |
-| Lint & Formatting     | ESLint + Prettier                           | 10.x / 3.x |
-| Package Manager       | pnpm                                        | 11.x       |
-| CI/CD                 | GitHub Actions                              | -          |
-| Deployment            | Vercel                                      | -          |
+| Category             | Technology                                      | Version    |
+| -------------------- | ----------------------------------------------- | ---------- |
+| Language             | TypeScript (used for both frontend and backend) | 6.x        |
+| Build Tool           | Vite                                            | 8.x        |
+| Rendering            | HTML5 Canvas API (no external libraries)        | -          |
+| Backend              | Hono (planned — for the online ranking API)     | -          |
+| Unit Testing         | Vitest                                          | 4.x        |
+| Linting & Formatting | ESLint + Prettier                               | 10.x / 3.x |
+| Package Manager      | pnpm                                            | 11.x       |
+| CI/CD                | GitHub Actions                                  | -          |
+| Deployment           | Vercel                                          | -          |
 
 ## Architecture
 
-Game logic (maze checks, movement, collision, scoring) is separated from Canvas rendering, and the logic never depends on Canvas. The main loop is driven by `requestAnimationFrame`, performing "apply input → update state → render" every frame.
+Game logic such as maze tile lookups, movement, collision detection, and scoring is decoupled from Canvas rendering and does not depend on the Canvas API. The main loop is driven by `requestAnimationFrame`, running an "input → update → render" cycle every frame.
 
 ```
 [Keyboard input] ──→ [Game loop (requestAnimationFrame)]
                         ├─ update: state updates (maze, movement, ghost AI, score)
-                        └─ render: Canvas drawing (maze, characters, UI)
+                        └─ render: Canvas rendering (maze, characters, UI)
 ```
 
 ## Directory Structure
@@ -59,46 +57,40 @@ Game logic (maze checks, movement, collision, scoring) is separated from Canvas 
 ├── index.html           # Entry HTML (canvas element)
 ├── src/
 │   ├── main.ts          # Entry point (game loop & key input)
-│   ├── game.ts          # Overall game state (score, lives, level)
-│   ├── maze.ts          # Maze data & tile checks
-│   ├── pacman.ts        # Player movement & drawing
-│   ├── ghost.ts         # Ghost AI, states & drawing
-│   ├── i18n/            # Internationalization (type-safe dictionaries & t())
+│   ├── game.ts          # Overall game state management (score, lives, level)
+│   ├── maze.ts          # Maze data & tile lookups
+│   ├── player.ts        # Player movement & rendering
+│   ├── ghost.ts         # Ghost AI, states & rendering
+│   ├── i18n/            # Internationalization (type-safe dictionaries & translation function t())
 │   ├── types.ts         # Shared types (directions, etc.)
-│   └── style.css        # Page-wide styles
+│   └── style.css        # Global styles
 ├── package.json
 └── tsconfig.json
 ```
 
 ## Setup
 
-Requirements: Node.js 24+ / pnpm 11+
+Prerequisites: Node.js 24+ and pnpm 11+
 
 ```bash
 pnpm install   # Install dependencies
 pnpm dev       # Start the dev server
 ```
 
+The dev server runs at http://localhost:5173.
+
 No environment variables are required.
 
 ## Development Commands
 
-Run everything from the repository root.
+Run all commands from the repository root.
 
-| Command           | Description                   |
-| ----------------- | ----------------------------- |
-| `pnpm dev`        | Start the dev server          |
-| `pnpm build`      | Type check + production build |
-| `pnpm preview`    | Preview the production build  |
-| `pnpm test`       | Run unit tests once (Vitest)  |
-| `pnpm test:watch` | Run unit tests in watch mode  |
-| `pnpm lint`       | Run linter                    |
-| `pnpm format`     | Format code                   |
-
-## Dev Server URL
-
-http://localhost:5173
-
----
-
-⭐ If you found this project helpful, I would really appreciate a star.
+| Command           | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| `pnpm dev`        | Start the dev server                                   |
+| `pnpm build`      | Type check + production build                          |
+| `pnpm preview`    | Preview the production build                           |
+| `pnpm test`       | Run unit tests (Vitest)                                |
+| `pnpm test:watch` | Run unit tests in watch mode (re-runs on file changes) |
+| `pnpm lint`       | Run the linter                                         |
+| `pnpm format`     | Format the code                                        |
